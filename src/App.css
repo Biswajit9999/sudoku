@@ -1,38 +1,124 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  background: #f6f7fb;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.page {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.card {
+  width: 100%;
+  max-width: 596px;
+  padding: 28px 24px 24px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  align-self: flex-start;
+}
+
+h1 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.subtitle {
+  margin: 8px 0 18px;
+  color: #6b7280;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 4px;
+  width: 100%;
+  max-width: 482px;
+  margin: 0 auto 18px;
+}
+
+.cell {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+  background: #3a3a3a;
+  border: 1px solid #3a3a3a;
+  border-radius: 0;
+  caret-color: #fff;
+}
+
+.cell:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 0;
+}
+
+.cell.invalid {
+  color: #fecaca;
+  background: #fee2e2;
+  border-color: #fca5a5;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn {
+  padding: 12px 18px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn.validate {
+  background: #2563eb;
+}
+
+.btn.clear {
+  background: #e53e3e;
+}
+
+.message {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 8px;
+  margin: 16px 0 0;
+  font-size: 16px;
+  color: #000;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 520px) {
+  h1 {
+    font-size: 32px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .card {
+    padding: 20px 12px;
+  }
+
+  .board {
+    gap: 2px;
+  }
+
+  .cell {
+    font-size: 15px;
   }
 }
